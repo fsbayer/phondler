@@ -1,9 +1,9 @@
-# phonecodes
-Tools for loading dictionaries with various phonecodes (IPA, Callhome, X-SAMPA, ARPABET, DISC=CELEX), for converting among those phonecodes, and for searching those dictionaries for word sequences matching a target.
+# phodic
+Library to make phonetic representations (IPA, X-SAMPA, others) interoperable and create a phoneme data dictionary to enable other packages to work on phonemes.
 
 * src:
- * phonecode_tables.py - tables mapping other phonecodes to/from IPA
- * phonecodes.py - tools for converting strings
+ * phonecode_tables.py - tables mapping phonetic representations
+ * phonecodes.py - tools for converting strings between representations
  * pronlex.py - tools for reading, writing, converting, and searching pronunciation lexicon files in several standard formats.
 
 * test: test scripts and example files, showing how to use these tools.
