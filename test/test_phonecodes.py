@@ -2,8 +2,8 @@ import sys
 
 import pytest
 
-sys.path.append('../src')
-import phonecodes
+sys.path.append('../')
+import src.phodic as phonecodes
 from sentences import sents
 
 

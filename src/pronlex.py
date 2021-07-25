@@ -1,6 +1,6 @@
 import sys,os,re
-import phonecodes
-import phonecode_tables
+import phodic
+import phodic_tables
 
 LEAF='LEAF'
 MAXSET=8000
@@ -21,7 +21,7 @@ def dict_convert_phonecode(d0,code0,code1,language):
         if p0==LEAF:
             d1[p0]=d0[p0]
         else:
-            p1 = phonecodes.convert(p0,code0,code1,language)
+            p1 = phodic.convert(p0, code0, code1, language)
             d1[p1] = dict_convert_phonecode(d0[p0],code0,code1,language)
     return(d1)
 
@@ -137,7 +137,7 @@ def read_celex_dictfile(filename, lang, params):
             word = re.sub(r'\s+','_',words[1])
             options = words[pcol].split('\\')
             for option in options:
-                ol=phonecodes.attach_tones_to_vowels(list(option),set("'"),phonecode_tables._disc_vowels,1,-1)
+                ol=phodic.attach_tones_to_vowels(list(option), set("'"), phodic_tables._disc_vowels, 1, -1)
                 S.append((word, ol))
     return(S)
 
@@ -174,7 +174,7 @@ def read_callhome_dictfile(filename, L, params):
                 phones=[ syls[n]+tones[n] for n in range(0,len(tones)) ]
                 phones.append(''.join(syls[len(tones):]))
                 il = list(''.join(phones))
-                ol = phonecodes.attach_tones_to_vowels(il, set(phonecode_tables._tone2ipa[L].keys()), phonecode_tables._callhome_vowels[L], -1, 1)
+                ol = phodic.attach_tones_to_vowels(il, set(phodic_tables._tone2ipa[L].keys()), phodic_tables._callhome_vowels[L], -1, 1)
                 S.append((fields[gcol], ol))
     return(S)
 
@@ -223,7 +223,7 @@ class lex:
             other = lex(self.language, code1)
             other.p2w=dict_convert_phonecode(self.p2w,self.phonecode,code1,self.language)
             for (w,p) in self.w2p.items():
-                q=phonecodes.convertlist(p,self.phonecode,code1,self.language)
+                q=phodic.convertlist(p, self.phonecode, code1, self.language)
                 other.w2p[w] = q
             return(other)
     def phones2words(self, ph, D=0, paths=[[]], nmax=MAXSET):
