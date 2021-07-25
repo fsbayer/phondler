@@ -3,7 +3,7 @@ import sys
 import pytest
 
 sys.path.append('../')
-import src.phodic as phonecodes
+import phodic.phond as phonecodes
 from sentences import sents
 
 

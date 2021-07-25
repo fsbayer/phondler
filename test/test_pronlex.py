@@ -1,7 +1,7 @@
 import sys,os,re
 import pprint
 import filecmp
-sys.path.append('../src')
+sys.path.append('../phodic')
 import pronlex
 import phonecodes
 

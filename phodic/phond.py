@@ -14,10 +14,10 @@
    phonecodes.vowels
    phonecodes.consonants
    # list known IPA symbols of vowels, consonants.
-   # for other tables, see phodic_tables.py
+   # for other tables, see phond_tables.py
 '''
 import re,sys
-import src.phodic_tables as phodic_tables
+import phodic.phond_tables as phodic_tables
 
 CODES=set(('ipa','arpabet','xsampa','disc','callhome'))
 LANGUAGES=set(('eng','deu','nld','arz','cmn','spa','yue','lao','vie'))
