@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------------------------------
-# Software:      Phond
+# Software:      Phondler
 #
 # Description:   Python handler for phonetic information
 # Version:       0.0.1
@@ -21,3 +21,4 @@ __authors__ = "Frederic Bayer, Mark Hasegawa-Johnson, Ruoho Ruotsi"
 __version__ = "0.0.1"
 __date__ = "2021"
 
+import phondler.phondler
