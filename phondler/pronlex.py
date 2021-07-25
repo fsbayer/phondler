@@ -1,6 +1,6 @@
-import sys,os,re
+import re
 import phodic
-import phond_tables
+import phondler_tables
 
 LEAF='LEAF'
 MAXSET=8000
@@ -137,7 +137,7 @@ def read_celex_dictfile(filename, lang, params):
             word = re.sub(r'\s+','_',words[1])
             options = words[pcol].split('\\')
             for option in options:
-                ol=phodic.attach_tones_to_vowels(list(option), set("'"), phond_tables._disc_vowels, 1, -1)
+                ol=phodic.attach_tones_to_vowels(list(option), set("'"), phondler_tables._disc_vowels, 1, -1)
                 S.append((word, ol))
     return(S)
 
@@ -174,7 +174,7 @@ def read_callhome_dictfile(filename, L, params):
                 phones=[ syls[n]+tones[n] for n in range(0,len(tones)) ]
                 phones.append(''.join(syls[len(tones):]))
                 il = list(''.join(phones))
-                ol = phodic.attach_tones_to_vowels(il, set(phond_tables._tone2ipa[L].keys()), phond_tables._callhome_vowels[L], -1, 1)
+                ol = phodic.attach_tones_to_vowels(il, set(phondler_tables._tone2ipa[L].keys()), phondler_tables._callhome_vowels[L], -1, 1)
                 S.append((fields[gcol], ol))
     return(S)
 

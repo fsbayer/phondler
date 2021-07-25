@@ -14,7 +14,7 @@
    phonecodes.vowels
    phonecodes.consonants
    # list known IPA symbols of vowels, consonants.
-   # for other tables, see phond_tables.py
+   # for other tables, see phondler_tables.py
 '''
 import re,sys
 import phodic.phond_tables as phodic_tables
