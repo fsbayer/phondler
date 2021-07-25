@@ -1,7 +1,8 @@
 MIT License
 
-"phonecodes" Copyright (c) 2020 Mark Hasegawa-Johnson
+"phonecodes" Copyright (c) 2018-2021 Mark Hasegawa-Johnson
 with modifications Copyright (c) 2020 Ruoho Ruotsi
+data.py from "pyphone" Copyright (c) 2017-2018 Ling Zhang
 "phondler" Copyright (c) 2021 Frederic Bayer
 
 Permission is hereby granted, free of charge, to any person obtaining a copy

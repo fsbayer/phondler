@@ -36,7 +36,7 @@ for fixture in fixtures:
     if dtype=='isle':
         dict_params['discard_phones'] = '#.'    
     print('Reading %s dict in %s from %s'%(dtype,lang,srcfile))
-    p[srcfile]['ipa']=pronlex.read(os.path.join('fixtures',srcfile)+'.txt',lang,dtype,dict_params).recode('ipa')
+    p[srcfile]['ipa']=pronlex.read(os.path.join('fixtures', srcfile) + '.txt', lang, dtype, dict_params).recode('ipa')
     
     # Convert to each target code, and back again, and check results
     for c1 in fixture[1]:
@@ -47,7 +47,7 @@ for fixture in fixtures:
             destfile=re.sub(r'sample',c[1],srcfile)
             print('%s -> %s'%(srcfile,destfile))
             p[srcfile][c[1]].save(os.path.join('outputs',destfile)+'.txt')
-            with open(os.path.join('fixtures',destfile)+'.txt') as f:
+            with open(os.path.join('fixtures', destfile) + '.txt') as f:
                 flines = f.readlines()
                 flines.append('-----\n')
             with open(os.path.join('outputs',destfile)+'.txt') as f:
