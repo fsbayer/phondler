@@ -1,6 +1,8 @@
 MIT License
 
-Copyright (c) [year] [fullname]
+"phonecodes" Copyright (c) 2020 Mark Hasegawa-Johnson
+with modifications Copyright (c) 2020 Ruoho Ruotsi
+"phodic" Copyright (c) 2021 Frederic Bayer
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
