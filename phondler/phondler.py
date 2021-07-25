@@ -1,23 +1,23 @@
 #!/usr/bin/python3
 '''A set of convenience functions for converting among different phone codes.
    Usage: 
-   import phonecodes
-   print phonecodes.CODES   # the known phone codes
-   print phonecodes.LANGUAGES # the known languages
-   s1 = phonecodes.convert(s0, code0, code1, language)
+   import phondler
+   print phondler.CODES   # the known phone codes
+   print phondler.LANGUAGES # the known languages
+   s1 = phondler.convert(s0, code0, code1, language)
    # s0 and s1 are strings containing individual symbols
-   # code0 and code1 must be members of phonecodes.CODES, of course
-   # language must be a member of phonecodes.LANGUAGES, of course
+   # code0 and code1 must be members of phondler.CODES, of course
+   # language must be a member of phondler.LANGUAGES, of course
    #   (but not all languages are known for all phone codes)
-   l1 = phonecodes.convertlist(l0, code0, code1, language)
+   l1 = phondler.convertlist(l0, code0, code1, language)
    # l0, l1 are lists of symbols
-   phonecodes.vowels
-   phonecodes.consonants
+   phondler.vowels
+   phondler.consonants
    # list known IPA symbols of vowels, consonants.
    # for other tables, see phondler_tables.py
 '''
 import re,sys
-import phodic.phond_tables as phodic_tables
+import phondler.phondler_tables as phodic_tables
 
 CODES=set(('ipa','arpabet','xsampa','disc','callhome'))
 LANGUAGES=set(('eng','deu','nld','arz','cmn','spa','yue','lao','vie'))
@@ -90,7 +90,7 @@ def xsampa2ipa(x,language):
 ######################################################################
 # Language-dependent lexical tones and stress markers
 def tone2ipa(n, language):
-    return(phodic_tables._tone2ipa[L][int(n[1:])])
+    return(phodic_tables._tone2ipa[language][int(n[1:])])
 
 #####################################################################
 # DISC, the system used by CELEX
@@ -172,7 +172,7 @@ def timit2ipa(x,L):
     return(''.join(ol))
 
 #######################################################################
-# phonecodes.convert and phonecodes.convertlist
+# phondler.convert and phondler.convertlist
 # are used to convert symbols and lists of symbols, respectively,
 # to or from IPA, by calling appropriate other functions.
 #
